@@ -1,5 +1,6 @@
 import { css } from '@kuma-ui/core';
 import { Navbar } from './header/navbar';
+import { Footer } from './footer/footer';
 
 type MainLayoutProps = {
   children: React.ReactNode;
@@ -10,6 +11,7 @@ export const MainLayout = ({ children }: MainLayoutProps): JsxElement => {
     <main className={mainClass}>
       <Navbar />
       {children}
+      <Footer />
     </main>
   );
 };

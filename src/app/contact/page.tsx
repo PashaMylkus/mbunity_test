@@ -1,3 +1,5 @@
+import { ContactPage } from '@/tree/contact-us/page';
+
 export default function ContactUs(): JsxElement {
-  return <div>ContactUs</div>;
+  return <ContactPage />;
 }

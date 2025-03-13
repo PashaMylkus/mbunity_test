@@ -1,7 +1,11 @@
-import { css } from "@kuma-ui/core";
+import { css, cx } from "@kuma-ui/core";
 
-export const Logo = (): JsxElement => {
-  return <div className={mainClass}>Logo Here </div>;
+type LogoProps = {
+  isWhite?:boolean | undefined
+  className?:string
+}
+export const Logo = ({isWhite, className} : LogoProps): JsxElement => {
+  return <div className={cx(mainClass, isWhite && whiteClass, className) }>Logo Here </div>;
 };
 
 const mainClass = css`
@@ -11,4 +15,8 @@ const mainClass = css`
     font-weight: 800;
     line-height: 29px;
     letter-spacing: 0%;
+`
+const whiteClass = css`
+    color: #fff;
+
 `

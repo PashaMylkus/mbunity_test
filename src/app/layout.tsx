@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { inter, poppins } from '@/foundation/font';
+import { inter, manrope, poppins, roboto } from '@/packs/font';
 import { MainLayout } from '@/tree/layout/layout';
 import { KumaRegistry } from '@kuma-ui/next-plugin/registry';
 
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <KumaRegistry>
-        <body className={`${poppins.variable}  ${inter.variable} antialiased`}>
+        <body className={`${poppins.variable}  ${inter.variable} ${roboto.variable} ${manrope.variable} antialiased`}>
           <MainLayout>{children}</MainLayout>
         </body>
       </KumaRegistry>
