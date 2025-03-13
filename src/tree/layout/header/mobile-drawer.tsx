@@ -13,7 +13,16 @@ type MobileDrawerProps = {
 
 export const MobileDrawer = ({ isOpen, close }: MobileDrawerProps): JsxElement => {
   return (
-    <Drawer size={1000} placement="top" open={isOpen} onClose={close} className={drawerClass}>
+    <Drawer
+      size={1000}
+      placement="top"
+      open={isOpen}
+      onClose={close}
+      className={drawerClass}
+      placeholder={undefined}
+      onPointerEnterCapture={undefined}
+      onPointerLeaveCapture={undefined}
+    >
       <div className={drawerHeader}>
         <Logo isWhite />
         <CloseIcon onClick={close} className={closeIconClass} />
