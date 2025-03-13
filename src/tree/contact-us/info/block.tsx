@@ -9,11 +9,14 @@ import DiscordIcon from '@/tree/contact-us/assets/discord.svg';
 export const InfoBlock = (): JsxElement => {
   return (
     <div className={mainClass}>
-      <div className="flex flex-col items-start gap-[3px]">
-        <div className="text-[28px] font-semibold">Contact Information</div>
-        <div className="text-[rgb(201,_201,_201)] text-[18px] font-normal">Say something to start a live chat!</div>
+      <div className="flex flex-col items-start gap-[3px] max-md:items-center">
+        <div className="text-[28px] font-semibold max-md:text-center max-md:text-[20px]">Contact Information</div>
+        <div className="text-[rgb(201,_201,_201)] text-[18px] font-normal max-md:text-center max-md:text-[11px]">
+          Say something to start a live chat!
+        </div>
       </div>
-      <div className="flex flex-col items-start justify-between gap-[50px]">
+
+      <div className="flex flex-col items-start justify-between gap-[50px] max-md:gap-[12px]">
         <div className={infoItemClass}>
           <PhoneIcon className={iconClass} />
           <a href="tel:+1012 3456 789">+1012 3456 789</a>
@@ -27,6 +30,7 @@ export const InfoBlock = (): JsxElement => {
           132 Dartmouth Street Boston, Massachusetts 02156 United States
         </div>
       </div>
+
       <div className="flex items-center gap-[24px] pt-[50px]">
         <a className={socialClass}>
           <TwiterIcon />
@@ -38,6 +42,7 @@ export const InfoBlock = (): JsxElement => {
           <DiscordIcon />
         </a>
       </div>
+
       <div className={smallCircleClass}></div>
       <div className={circleClass}></div>
     </div>
@@ -71,6 +76,12 @@ const smallCircleClass = css`
   bottom: 70px;
   right: 70px;
   z-index: 1;
+  @media (max-width: 800px) {
+    width: 54px;
+    height: 54px;
+    bottom: 60px;
+    right: 40px;
+  }
 `;
 const circleClass = css`
   background: rgb(26, 26, 26);
@@ -81,6 +92,10 @@ const circleClass = css`
   bottom: -80px;
   right: -100px;
   z-index: 0;
+  @media (max-width: 800px) {
+    width: 192px;
+    height: 192px;
+  }
 `;
 const iconClass = css`
   width: 31px;
@@ -93,6 +108,15 @@ const infoItemClass = css`
   font-weight: 400;
   line-height: 24px;
   gap: 25px;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+    font-size: 12px;
+    text-align: center;
+  }
 `;
 
 const mainClass = css`
@@ -113,4 +137,10 @@ const mainClass = css`
   padding-top: 40px;
   color: rgb(255, 255, 255);
   overflow: hidden;
+
+  @media (max-width: 800px) {
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+  }
 `;

@@ -14,7 +14,7 @@ export const Footer = (): JsxElement => {
           <Logo isWhite className="text-[36px]" />
         </div>
 
-        <div className="px-[20px] py-[30px] flex gap-[40px] flex-wrap lg:flex-nowrap">
+        <div className="px-[20px] py-[30px] flex  gap-[40px] max-md:flex-wrap max-md:[&>*:nth-child(5)]:col-span-2 max-md:grid sm:grid-cols-2 max-md:gap-[40px]">
           <div className={`${colClass} !flex-2`}>
             <div className={titleClass}>Reach us</div>
             <div className={infoItemClass}>
@@ -87,6 +87,9 @@ const colClass = css`
   justify-content: flex-start;
   gap: 24px;
   flex: 1;
+  @media (max-width: 800px) {
+    gap: 20px;
+  }
 `;
 const logoClass = css`
   display: flex;
@@ -95,6 +98,11 @@ const logoClass = css`
   padding-top: 80px;
   padding-bottom: 45px;
   border-bottom: 1px solid #fff;
+  @media (max-width: 800px) {
+    padding: 19px 20px;
+    margin: 0 20px;
+    width: calc(100% - 40px);
+  }
 `;
 const infoItemClass = css`
   display: flex;
@@ -104,6 +112,11 @@ const infoItemClass = css`
   font-weight: 400;
   line-height: 24px;
   gap: 25px;
+  @media (max-width: 800px) {
+    font-size: 14px;
+    flex-direction: column;
+    gap: 12px;
+  }
 `;
 
 const iconClass = css`
@@ -113,4 +126,7 @@ const titleClass = css`
   color: rgb(255, 255, 255);
   font-size: 18px;
   font-weight: 600;
+  @media (max-width: 800px) {
+    font-size: 16px;
+  }
 `;

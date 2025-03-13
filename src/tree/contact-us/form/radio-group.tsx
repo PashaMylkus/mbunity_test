@@ -21,7 +21,7 @@ export const RadioGroup = (): JsxElement => {
   return (
     <div className="flex flex-col items-start gap-[14px]">
       <div className={titleClass}>Select Subject?</div>
-      <div className="flex items-center justify-start gap-[20px]">
+      <div className="flex items-center justify-start gap-[20px] max-md:flex-wrap">
         {radio_item.map((item) => (
           <Radio key={item.value} name="example" label={item.label} value={item.value} checked={subject === item.value} onChange={onChange} />
         ))}

@@ -47,8 +47,10 @@ export const FormInputs = (): JsxElement => {
       </div>
       <RadioGroup />
       <TextInput placeholder="Write your message.." label="Message" value={message} onChange={onMessageChange} />
-      <div className="flex justify-end">
-        <Button type="submit">Send Message</Button>
+      <div className="flex justify-end max-md:justify-center max-md:pb-[30px] ">
+        <Button className="max-md:w-full" type="submit">
+          Send Message
+        </Button>
       </div>
     </div>
   );
@@ -59,12 +61,19 @@ const rowClass = css`
   align-items: center;
   justify-content: space-between;
   gap: 39px;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 
 const mainClass = css`
   display: flex;
   flex-direction: column;
   gap: 49px;
+  @media (max-width: 800px) {
+    gap: 20px;
+  }
 `;
 
 const formatPhoneNumber = (input: string) => {
