@@ -40,9 +40,12 @@ const nav_items = [
   },
 ];
 
-export const NavItems = (): JsxElement => {
+export const NavItems = ({ close }: { close?: () => void }): JsxElement => {
   const pathname = usePathname();
 
+  const onLinkClick = () => {
+    close?.();
+  };
   return (
     <>
       {nav_items.map((item) => {
@@ -51,7 +54,7 @@ export const NavItems = (): JsxElement => {
             <Dropdown key={item.name} label={<div className={cx(linkClass)}>{item.name}</div>}>
               <div className={dropdownItemsClass}>
                 {item.sub?.map((el) => (
-                  <Link key={el.name} href={el.url ?? ''}>
+                  <Link onClick={onLinkClick} key={el.name} href={el.url ?? ''}>
                     {el.name}
                   </Link>
                 ))}
@@ -61,7 +64,7 @@ export const NavItems = (): JsxElement => {
         }
 
         return (
-          <Link className={cx(pathname === item.url && activeLinkClass, linkClass)} key={item.name} href={item.url ?? ''}>
+          <Link onClick={onLinkClick} className={cx(pathname === item.url && activeLinkClass, linkClass)} key={item.name} href={item.url ?? ''}>
             {item.name}
           </Link>
         );

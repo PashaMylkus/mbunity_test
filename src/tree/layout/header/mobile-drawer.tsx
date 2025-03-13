@@ -29,7 +29,7 @@ export const MobileDrawer = ({ isOpen, close }: MobileDrawerProps): JsxElement =
       </div>
 
       <div className={navClass}>
-        <NavItems />
+        <NavItems close={close} />
       </div>
       <div className="flex items-center gap-[30px] fixed bottom-10 left-2/4 -translate-x-1/2 justify-center">
         <button className={buttonClass}>
